@@ -29,14 +29,14 @@ func Serve(c *Conn) {
 		case "LIST": // ls
 
 		case "PORT":
-
+			c.port(args)
 		case "USER":
-
+			c.user(args)
 		case "QUIT": //Quit
 			// close the connection
 
 		case "RETR": //get
-
+			c.retr(args)
 		case "TYPE":
 
 		default:
@@ -45,6 +45,6 @@ func Serve(c *Conn) {
 	}
 
 	if s.Err() != nil {
-		log.Println(s.Err)
+		log.Println(s.Err())
 	}
 }
